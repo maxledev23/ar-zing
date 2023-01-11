@@ -1,0 +1,68 @@
+{
+    "Items" : [
+        {
+            "title": "Étape 1.1",
+            "description": "Allumer l’interrupteur sur la droite de la découpeuse graveuse laser"
+        },
+        {
+            "title": "Étape 1.2",
+            "description": "L’écran s’allume et la marque apparaît au bout de quelques secondes"
+        },
+        {
+            "title": "Étape 2",
+            "description": "Placer la matière à découper et/ou graver en butée au fond du plateau de découpe"
+        },
+        {
+            "title": "Étape 3.1",
+            "description": "Prendre le témoin de hauteur à droite sur l’axe de la lentille et le faire glisser au milieu"
+        },
+        {
+            "title": "Étape 3.2",
+            "description": "Tirer sur la partie droite du témoin afin de le libérer de l’aimant"
+        },
+        {
+            "title": "Étape 4.1",
+            "description": "Il faut que le témoin de hauteur soit droit et collé au matériau"
+        },
+        {
+            "title": "Étape 4.2",
+            "description": "Pour monter ou descendre le plateau, utilisez les boutons de nivellement"
+        },
+        {
+            "title": "Étape 4.3",
+            "description": "Une fois le témoin de hauteur droit et légèrement collé au matériaux, il faut le remettre en place initale aimenté"
+        },
+        {
+            "title": "Étape 5.1",
+            "description": "Brancher le cable RJ45 sur le côté droit de la machine à l'ordinateur"
+        },
+        {
+            "title": "Étape 5.2",
+            "description": "Lancer l’impression d’un fichier depuis l’ordinateur (PhotoLaser Plus Advanced Epilog Edition)"
+        },
+        {
+            "title": "Étape 5.3",
+            "description": "La DEL au dessus de l’icone imprimante clignote et «Job 1: [jobName]» apparaît à l’écran"
+        },
+        {
+            "title": "Étape 6.1",
+            "description": "Appuyez sur le bouton marche/arrêt pour allumer le système d’extraction/filtration"
+        },
+        {
+            "title": "Étape 6.2",
+            "description": "Les témoins de débit d’air s’allument en bleu. Toujours mettre 4 ou 5 sur 6"
+        },
+        {
+            "title": "Étape 6.3",
+            "description": "Seule la DEL verte à droite de la coche validé est allumée"
+        },
+        {
+            "title": "Étape 6.4",
+            "description": "Si les étapes 6.2 et 6.3 ne sont pas validé, il y a de la maintenance à faire et nous ne pouvons pas utiliser la machine pour le moment"
+        },
+        {
+            "title": "Étape 7",
+            "description": "Lancer la découpe et/ou la gravure en cliquant sur le bouton play"
+        }
+    ]
+}
