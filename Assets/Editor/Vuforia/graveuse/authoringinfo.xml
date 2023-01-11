@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="QCAR_Dataset_info.xsd">
+    <TargetSet version="3.4">
+        <AreaTarget version="5.1" bbox="-3.9881 -3.5234 -6.1168 2.4683 0.7117 3.6728" targetId="d1b32d33202940758e46bfab709bd52d" name="graveuse" pathAuthoring="d1b32d33202940758e46bfab709bd52d_authoring.glb" pathOcclusion="d1b32d33202940758e46bfab709bd52d_occlusion.3dt" pathNavMesh="d1b32d33202940758e46bfab709bd52d_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>
