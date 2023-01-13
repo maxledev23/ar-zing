@@ -1,4 +1,4 @@
-public class Instructions
+public class Steps
 {
-    public Instruction[] Items;
+    public Step[] steps;
 }

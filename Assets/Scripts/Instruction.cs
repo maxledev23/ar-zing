@@ -1,5 +1,5 @@
 [System.Serializable]
-public class Instruction
+public class Step
 {
     public string title;
     public string description;

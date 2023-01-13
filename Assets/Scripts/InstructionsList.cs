@@ -3,67 +3,90 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
-using System.Text;
 
 public class InstructionsList : MonoBehaviour
 {
-    // Déclaration des objets
+    // GameObjects
     public Button previousButton, nextButton;
     public GameObject titleObj, descriptionObj;
-    private TMP_Text title, description;
+    private GameObject StepsObject, StepObject, PreviousObject;
+    private TMP_Text title;
+    private TMP_Text description;
 
-    // Index de l'instruction en cours
-    private int currentInstruction;
-
-    // Tableau des instructions
-    private Instructions instructionsList;
-
-    // Fichier JSON contenant les instructions
+    // JSON file and its content
     public TextAsset jsonFile;
+    private Steps stepsInJson;
+
+    // The state variables
+    private int currentStep;
+    private int previousStep;
 
     void Start() {
-        // Initialisation de l'index
-        currentInstruction = 0;
+        currentStep = 0;
+        previousStep = -1;
 
-        // Initialisation des éléments de texte
+        // Get the TMP Texts
         title = titleObj.GetComponent<TMP_Text>();
         description = descriptionObj.GetComponent<TMP_Text>();
 
-        // Ajouts des listeners sur les clicks de boutons
-        previousButton.onClick.AddListener(decrementInstruction);
-        nextButton.onClick.AddListener(incrementInstruction);
+        // Add listeners to buttons
+        previousButton.onClick.AddListener(decrementStep);
+        nextButton.onClick.AddListener(incrementStep);
 
-        // Deserialize JSON File
-        instructionsList = JsonUtility.FromJson<Instructions>(jsonFile.text);
+        // Get data from JSON File
+        stepsInJson = JsonUtility.FromJson<Steps>(jsonFile.text);
 
-        foreach (Instruction item in instructionsList.Items) {
-            Debug.Log(item.title);
+        // Find the GameObject containing all the steps
+        StepsObject = GameObject.Find("Steps");
+
+        for (int i = 0; i < StepsObject.transform.childCount; i++)
+        {
+            StepObject = StepsObject.transform.GetChild(i).gameObject;
+            StepObject.SetActive(false);
         }
 
-        // Initialise les champs de texte avec la première Instruction
-        changeText(currentInstruction);
+        // Set the first step
+        changeText();
+        changeGameObjects();
     }
 
-    public void incrementInstruction() {
-        // Incrémente l'index si on ne dépasse pas la taille max du tableau d'instruction
-        if(currentInstruction != instructionsList.Items.Length - 1) {
-            currentInstruction++;
-            changeText(currentInstruction);
+    // When the next button is clicked
+    public void incrementStep() {
+        previousStep = currentStep;
+        if(currentStep != stepsInJson.steps.Length - 1) {
+        currentStep++;
+        changeText();
+        changeGameObjects();
         }
     }
 
-    public void decrementInstruction() {
-        // Décrémente l'index si on n'est pas à la taille minimale
-        if(currentInstruction != 0) {
-            currentInstruction--;
-            changeText(currentInstruction);
+    // When the previous button is clicked
+    public void decrementStep() {
+        previousStep = currentStep;
+        if(currentStep != 0) {
+        currentStep--;
+        changeText();
+        changeGameObjects();
         }
     }
 
-    private void changeText(int currentInstruction) {
-        // Change le titre et le texte en fonction de l'index
-        title.text = instructionsList.Items[currentInstruction].title;
-        description.text = instructionsList.Items[currentInstruction].description;
-        Debug.Log("Current status : " + currentInstruction);
+    // Change the title and description
+    private void changeText() {
+        title.text = stepsInJson.steps[currentStep].title;
+        description.text = stepsInJson.steps[currentStep].description;
+        Debug.Log("Current status : " + currentStep);
+    }
+
+    // Change the GameObjects on screen
+    private void changeGameObjects() {
+        // If it's not the start, make the previous GameObject disappear
+        if(previousStep != -1) {
+           PreviousObject.SetActive(false);
+           Debug.Log("Desactivated previous GameObject");
+        }
+        StepObject = StepsObject.transform.GetChild(currentStep).gameObject;
+        PreviousObject = StepObject;
+        StepObject.SetActive(true);
+        Debug.Log("Activated right GameObject");
     }
 }
