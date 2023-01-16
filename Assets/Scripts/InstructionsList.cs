@@ -8,10 +8,10 @@ public class InstructionsList : MonoBehaviour
 {
     // GameObjects
     public Button previousButton, nextButton;
-    public GameObject titleObj, descriptionObj;
+    public GameObject numberObj, titleObj, descriptionObj, messageIconObj, warningIconObj;
     private GameObject StepsObject, StepObject, PreviousObject;
-    private TMP_Text title;
-    private TMP_Text description;
+    private TMP_Text number, title, description;
+    private Image messageIcon, warningIcon;
 
     // JSON file and its content
     public TextAsset jsonFile;
@@ -26,8 +26,13 @@ public class InstructionsList : MonoBehaviour
         previousStep = -1;
 
         // Get the TMP Texts
+        number = numberObj.GetComponent<TMP_Text>();
         title = titleObj.GetComponent<TMP_Text>();
         description = descriptionObj.GetComponent<TMP_Text>();
+
+        // Get the images
+        messageIcon = messageIconObj.GetComponent<Image>();
+        warningIcon = warningIconObj.GetComponent<Image>();
 
         // Add listeners to buttons
         previousButton.onClick.AddListener(decrementStep);
@@ -70,10 +75,23 @@ public class InstructionsList : MonoBehaviour
         }
     }
 
-    // Change the title and description
+    // Change the number, title and description
     private void changeText() {
+        number.text = stepsInJson.steps[currentStep].number;
         title.text = stepsInJson.steps[currentStep].title;
         description.text = stepsInJson.steps[currentStep].description;
+        
+        if (stepsInJson.steps[currentStep].info == 1) {
+            messageIcon.enabled = true;
+            warningIcon.enabled = false;
+        } else if (stepsInJson.steps[currentStep].info == 2) {
+            messageIcon.enabled = false;
+            warningIcon.enabled = true;
+        } else {
+            messageIcon.enabled = false;
+            warningIcon.enabled = false;
+        }
+
         Debug.Log("Current status : " + currentStep);
     }
 
