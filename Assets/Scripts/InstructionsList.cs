@@ -7,7 +7,7 @@ using TMPro;
 public class InstructionsList : MonoBehaviour
 {
     // GameObjects
-    public Button previousButton, nextButton;
+    public Button previousButton, nextButton, quitButton;
     public GameObject numberObj, titleObj, descriptionObj, messageIconObj, warningIconObj;
     private GameObject StepsObject, StepObject, PreviousObject;
     private TMP_Text number, title, description;
@@ -37,6 +37,10 @@ public class InstructionsList : MonoBehaviour
         // Add listeners to buttons
         previousButton.onClick.AddListener(decrementStep);
         nextButton.onClick.AddListener(incrementStep);
+        quitButton.onClick.AddListener(quitApp);
+
+        // Disable button
+        quitButton.gameObject.SetActive(false);
 
         // Get data from JSON File
         stepsInJson = JsonUtility.FromJson<Steps>(jsonFile.text);
@@ -55,13 +59,23 @@ public class InstructionsList : MonoBehaviour
         changeGameObjects();
     }
 
+    // When the quit button is clicked
+    public void quitApp() {
+        Application.Quit();
+    }
+
     // When the next button is clicked
     public void incrementStep() {
         previousStep = currentStep;
         if(currentStep != stepsInJson.steps.Length - 1) {
-        currentStep++;
-        changeText();
-        changeGameObjects();
+            currentStep++;
+            changeText();
+            changeGameObjects();
+        }
+        
+        if (currentStep == stepsInJson.steps.Length - 1) {
+            nextButton.gameObject.SetActive(false);
+            quitButton.gameObject.SetActive(true);
         }
     }
 
@@ -69,9 +83,12 @@ public class InstructionsList : MonoBehaviour
     public void decrementStep() {
         previousStep = currentStep;
         if(currentStep != 0) {
-        currentStep--;
-        changeText();
-        changeGameObjects();
+            currentStep--;
+            changeText();
+            changeGameObjects();
+
+            nextButton.gameObject.SetActive(true);
+            quitButton.gameObject.SetActive(false);
         }
     }
 

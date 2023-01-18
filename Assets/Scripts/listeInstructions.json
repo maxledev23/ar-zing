@@ -18,8 +18,8 @@
             "step": 3,
             "info": 0,
             "number": "2.1",
-            "title": "Ouverture du socle",
-            "description": "Ouvrir le socle de la découpeuse graveuse laser."
+            "title": "Ouverture du capot",
+            "description": "Ouvrir le capot de la découpeuse graveuse laser."
         },
         {
             "step": 4,
@@ -44,7 +44,7 @@
         },
         {
             "step": 7,
-            "info": 0,
+            "info": 1,
             "number": "4.1",
             "title": "Utilisation du témoin",
             "description": "Il faut que le témoin de hauteur soit droit et collé au matériau."
@@ -60,67 +60,81 @@
             "step": 9,
             "info": 0,
             "number": "4.3",
+            "title": "Placement du plateau",
+            "description": "Pour monter ou descendre le plateau, utilisez les boutons de nivellement."
+        },
+        {
+            "step": 10,
+            "info": 0,
+            "number": "4.3",
             "title": "Rangement du temoin",
             "description": "Une fois le témoin de hauteur droit et légèrement collé au matériau, il faut le remettre à sa place initale aimanté."
         },
         {
-            "step": 10,
+            "step": 11,
+            "info": 0,
+            "number": "4.4",
+            "title": "Fermeture du capot",
+            "description": "Fermer le capot de la découpeuse graveuse laser."
+        },
+        {
+            "step": 12,
             "info": 0,
             "number": "5.1",
             "title": "Connexion à l'ordinateur",
             "description": "Brancher le câble RJ45 sur le côté droit de la machine à l'ordinateur."
         },
         {
-            "step": 11,
+            "step": 13,
             "info": 1,
             "number": "5.2",
             "title": "Sélection du fichier",
             "description": "Lancer l’impression d’un fichier depuis l’ordinateur (Logiciel : PhotoLaser Plus Advanced Epilog Edition)."
         },
         {
-            "step": 12,
+            "step": 14,
             "info": 1,
             "number": "5.3",
             "title": "Vérification sur l'écran",
             "description": "La DEL au-dessus de l’icône imprimante clignote et «Job 1: [jobName]» apparaît à l’écran."
         },
         {
-            "step": 13,
+            "step": 15,
             "info": 0,
             "number": "6.1",
             "title": "Allumage filtre",
             "description": "Appuyez sur le bouton marche/arrêt pour allumer le système d’extraction/filtration."
         },
         {
-            "step": 14,
+            "step": 16,
             "info": 0,
             "number": "6.2",
             "title": "Témoin de ventillation",
             "description": "Les témoins de débit d’air s’allument en bleu. Toujours mettre 4 ou 5 sur 6 en puissance."
         },
         {
-            "step": 15,
+            "step": 17,
             "info": 1,
             "number": "6.3",
             "title": "Vérification DEL verte",
             "description": "Seule la DEL verte à droite de la coche validée est allumée."
         },
         {
-            "step": 16,
+            "step": 18,
             "info": 2,
             "number": "6.4",
             "title": "Attention, vérification",
             "description": "Si les étapes 6.2 et 6.3 ne sont pas validées, il y a de la maintenance à faire et nous ne pouvons pas utiliser la machine pour le moment."
         },
         {
-            "step": 17,
+            "step": 19,
             "info": 0,
             "number": "7",
             "title": "Lancement",
             "description": "Lancer la découpe et/ou la gravure en cliquant sur le bouton Play."
         },
         {
-            "step": 18,
+            "step": 20,
             "info": 1,
             "number": "8",
             "title": "Fin",
