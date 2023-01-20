@@ -8,8 +8,9 @@ public class InstructionsList : MonoBehaviour
 {
     // GameObjects
     public Button previousButton, nextButton, quitButton;
-    public GameObject numberObj, titleObj, descriptionObj, messageIconObj, warningIconObj;
+    public GameObject areaTargetSteps, imageTargetSteps1, numberObj, titleObj, descriptionObj, messageIconObj, warningIconObj, hitbox;
     private GameObject StepsObject, StepObject, PreviousObject;
+    private GameObject[] StepsObjects, PreviousObjects;
     private TMP_Text number, title, description;
     private Image messageIcon, warningIcon;
 
@@ -45,15 +46,21 @@ public class InstructionsList : MonoBehaviour
         // Get data from JSON File
         stepsInJson = JsonUtility.FromJson<Steps>(jsonFile.text);
 
-        // Find the GameObject containing all the steps
-        StepsObject = GameObject.Find("Steps");
+        // Create GameObjects Arrays
+        StepsObjects = new GameObject[2];
+        PreviousObjects = new GameObject[2];
 
-        for (int i = 0; i < StepsObject.transform.childCount; i++)
-        {
-            StepObject = StepsObject.transform.GetChild(i).gameObject;
-            StepObject.SetActive(false);
+        // Assigning GameObjects to the Steps Array
+        StepsObjects[0] = areaTargetSteps;
+        StepsObjects[1] = imageTargetSteps1;
+
+        foreach (GameObject StepsObject in StepsObjects) {
+            for (int i = 0; i < StepsObject.transform.childCount; i++)
+            {
+                StepObject = StepsObject.transform.GetChild(i).gameObject;
+                StepObject.SetActive(false);
+            }
         }
-
         // Set the first step
         changeText();
         changeGameObjects();
@@ -72,7 +79,7 @@ public class InstructionsList : MonoBehaviour
             changeText();
             changeGameObjects();
         }
-        
+
         if (currentStep == stepsInJson.steps.Length - 1) {
             nextButton.gameObject.SetActive(false);
             quitButton.gameObject.SetActive(true);
@@ -114,14 +121,25 @@ public class InstructionsList : MonoBehaviour
 
     // Change the GameObjects on screen
     private void changeGameObjects() {
-        // If it's not the start, make the previous GameObject disappear
-        if(previousStep != -1) {
-           PreviousObject.SetActive(false);
-           Debug.Log("Desactivated previous GameObject");
-        }
-        StepObject = StepsObject.transform.GetChild(currentStep).gameObject;
-        PreviousObject = StepObject;
-        StepObject.SetActive(true);
-        Debug.Log("Activated right GameObject");
+        for (int i = 0; i < StepsObjects.Length; i++) {
+            StepsObject = StepsObjects[i];
+            if (previousStep != -1) {
+                PreviousObjects[i].SetActive(false);
+                Debug.Log("Desactivated previous GameObject");
+            }
+
+            StepObject = StepsObject.transform.GetChild(currentStep).gameObject;
+
+            if (i == 1 && StepObject.transform.childCount > 0) {
+                hitbox.SetActive(false);
+            }
+            else{
+                hitbox.SetActive(true);
+            }
+
+            PreviousObjects[i] = StepObject;
+            StepObject.SetActive(true);
+            Debug.Log("Activated right GameObject");
+        } 
     }
 }

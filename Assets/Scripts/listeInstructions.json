@@ -54,14 +54,14 @@
             "info": 0,
             "number": "4.2",
             "title": "Placement du plateau",
-            "description": "Pour monter ou descendre le plateau, utilisez les boutons de nivellement."
+            "description": "Pour commencer le nivellement, appuyez sur le bouton du plateau."
         },
         {
             "step": 9,
             "info": 0,
             "number": "4.3",
             "title": "Placement du plateau",
-            "description": "Pour monter ou descendre le plateau, utilisez les boutons de nivellement."
+            "description": "Pour monter ou descendre le plateau, utilisez les boutons haut et bas."
         },
         {
             "step": 10,
