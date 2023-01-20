@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Button_top" size="1.000000 3.149688" />
+    <ImageTarget name="Button2" size="1.000000 0.675525" />
+    <ImageTarget name="Buttons" size="1.000000 0.765081" />
+    <ImageTarget name="Interior" size="1.000000 0.599334" />
+    <ImageTarget name="Front_bottom" size="1.000000 0.787202" />
+    <ImageTarget name="Front_logo" size="1.000000 0.451834" />
+    <ImageTarget name="Side" size="1.000000 0.608725" />
+    <ImageTarget name="Top" size="1.000000 1.060345" />
+  </Tracking>
+</QCARConfig>
