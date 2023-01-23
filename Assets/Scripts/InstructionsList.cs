@@ -7,8 +7,8 @@ using TMPro;
 public class InstructionsList : MonoBehaviour
 {
     // GameObjects
-    public Button previousButton, nextButton, quitButton;
-    public GameObject areaTargetSteps, imageTargetSteps1, numberObj, titleObj, descriptionObj, messageIconObj, warningIconObj, hitbox;
+    public Button previousButton, nextButton, quitButton, noticeButton;
+    public GameObject areaTargetSteps, imageTargetSteps1, imageTargetSteps2, numberObj, titleObj, descriptionObj, messageIconObj, warningIconObj, hitbox;
     private GameObject StepsObject, StepObject, PreviousObject;
     private GameObject[] StepsObjects, PreviousObjects;
     private TMP_Text number, title, description;
@@ -41,18 +41,20 @@ public class InstructionsList : MonoBehaviour
         quitButton.onClick.AddListener(quitApp);
 
         // Disable button
+        previousButton.gameObject.SetActive(false);
         quitButton.gameObject.SetActive(false);
 
         // Get data from JSON File
         stepsInJson = JsonUtility.FromJson<Steps>(jsonFile.text);
 
         // Create GameObjects Arrays
-        StepsObjects = new GameObject[2];
-        PreviousObjects = new GameObject[2];
+        StepsObjects = new GameObject[3];
+        PreviousObjects = new GameObject[3];
 
         // Assigning GameObjects to the Steps Array
         StepsObjects[0] = areaTargetSteps;
         StepsObjects[1] = imageTargetSteps1;
+        StepsObjects[2] = imageTargetSteps2;
 
         foreach (GameObject StepsObject in StepsObjects) {
             for (int i = 0; i < StepsObject.transform.childCount; i++)
@@ -78,6 +80,8 @@ public class InstructionsList : MonoBehaviour
             currentStep++;
             changeText();
             changeGameObjects();
+            previousButton.gameObject.SetActive(true);
+            noticeButton.gameObject.SetActive(false);
         }
 
         if (currentStep == stepsInJson.steps.Length - 1) {
@@ -96,6 +100,10 @@ public class InstructionsList : MonoBehaviour
 
             nextButton.gameObject.SetActive(true);
             quitButton.gameObject.SetActive(false);
+            if (currentStep == 0) {
+                previousButton.gameObject.SetActive(false);
+                noticeButton.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -130,8 +138,10 @@ public class InstructionsList : MonoBehaviour
 
             StepObject = StepsObject.transform.GetChild(currentStep).gameObject;
 
-            if (i == 1 && StepObject.transform.childCount > 0) {
-                hitbox.SetActive(false);
+            if (i != 0) {
+                if (StepObject.transform.childCount > 0) {
+                    hitbox.SetActive(false);
+                }
             }
             else{
                 hitbox.SetActive(true);
@@ -140,6 +150,10 @@ public class InstructionsList : MonoBehaviour
             PreviousObjects[i] = StepObject;
             StepObject.SetActive(true);
             Debug.Log("Activated right GameObject");
+
+            if (currentStep == StepsObject.transform.childCount - 1) {
+                Handheld.Vibrate();
+            }
         } 
     }
 }
