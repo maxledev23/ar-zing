@@ -431,12 +431,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Afin de pouvoir utiliser l'application, veuillez vous vous positionner
-    \xE0 moins de 5 m\xE8tres de la d\xE9coupeuse laser.\n\nIl vous suffira ensuite
-    de la regarder \xE0 l'aide de la cam\xE9ra afin de d\xE9marrer le manuel augment\xE9.\n\nLes
+  m_text: "Afin de pouvoir utiliser l'application, veuillez vous positionner \xE0
+    moins de 5 m\xE8tres de la d\xE9coupeuse laser.\n\nIl vous suffira ensuite de
+    la regarder \xE0 l'aide de la cam\xE9ra afin de d\xE9marrer le manuel augment\xE9.\n\nLes
     diff\xE9rentes \xE9tapes seront \xE9nonc\xE9es en bas de l'\xE9cran et une aide
-    visuelle sera apport\xE9e sur la cam\xE9ra.\n\nVeuillez cliquer sur suivant quand
-    une \xE9tape est finie."
+    visuelle sera apport\xE9e sur la cam\xE9ra.\n\nSi vous ne trouvez pas ce\nque
+    vous devez faire,\nprenez du recul sur la scene.\n\nVeuillez cliquer sur suivant
+    quand une \xE9tape est finie."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -463,8 +464,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -571,7 +572,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Notice d'utilisation
+  m_text: 'Notice d''utilisation
+
+    Zing Epilog'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -598,8 +601,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -800,7 +803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D\xE9marrer"
+  m_text: Suivant
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

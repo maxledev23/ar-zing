@@ -26,14 +26,14 @@
             "info": 0,
             "number": "2.2",
             "title": "Placement de la matière",
-            "description": "Placer la matière à découper et/ou graver en butée, au fond du plateau de découpe."
+            "description": "Placer la matière à découper et/ou graver en butée, dans l'angle supérieur gauche du plateau de découpe."
         },
         {
             "step": 5,
             "info": 0,
             "number": "3.1",
             "title": "Témoin de hauteur",
-            "description": "Prendre le témoin de hauteur à droite sur l’axe de la lentille\net le faire glisser au milieu."
+            "description": "Prendre le témoin de hauteur métallique à droite sur l’axe au dessus du plateau et le faire glisser au milieu de celui-ci."
         },
         {
             "step": 6,
@@ -54,7 +54,7 @@
             "info": 0,
             "number": "4.2",
             "title": "Placement du plateau",
-            "description": "Pour commencer le nivellement, appuyez sur le bouton du plateau."
+            "description": "Pour commencer le nivellement, approchez vous de l'écran et appuyez sur le bouton du plateau."
         },
         {
             "step": 9,
@@ -93,7 +93,7 @@
         },
         {
             "step": 14,
-            "info": 1,
+            "info": 0,
             "number": "5.3",
             "title": "Vérification sur l'écran",
             "description": "La DEL au-dessus de l’icône imprimante clignote et «Job 1: [jobName]» apparaît à l’écran."
@@ -103,7 +103,7 @@
             "info": 0,
             "number": "6.1",
             "title": "Allumage filtre",
-            "description": "Appuyez sur le bouton marche/arrêt pour allumer le système d’extraction/filtration."
+            "description": "Reculez d'un mètre afin\n de voir les indications.\nAppuyez sur le bouton marche/arrêt pour allumer le système d’extraction/filtration."
         },
         {
             "step": 16,
@@ -138,7 +138,7 @@
             "info": 1,
             "number": "8",
             "title": "Fin",
-            "description": "Félicitations !\nVotre découpe est lancée et il ne manque plus qu'à attendre ! Vous pouvez quitter l'application à l'aide du boutton plus bas."
+            "description": "Félicitations !\nVotre découpe est lancée et il ne manque plus qu'à attendre ! Vous pouvez quitter l'application à l'aide du boutton en haut."
         }
     ]
 }
